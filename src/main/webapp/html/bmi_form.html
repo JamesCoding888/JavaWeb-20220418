@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 絕對路徑 -->
+	<a href="/JavaWeb-20220418/servlet/bmi">
+		Reach to - protected void doGet(HttpServletRequest req, HttpServletResponse res)	
+	</a>		
+	<hr>				
+	<!-- 相對路徑 -->
+	<form action="../servlet/bmi" method="get">		
+		<input type="submit"> Press this button and reach to - protected void doGet(HttpServletRequest req, HttpServletResponse res)							
+	</form>	
+	<hr>	
+	<!-- 相對路徑 -->
+	<form action="../servlet/bmi" method="post">		
+		<input type="submit"> Press this button and reach to - protected void doPost(HttpServletRequest req, HttpServletResponse res)							
+	</form>		 		
+	<hr>		
+	<!-- 相對路徑 -->
+	<form action="../servlet/bmi" method="get">		
+		<button>
+			<!-- 相對路徑 -->
+			Press this button and reach to - protected void doGet(HttpServletRequest req, HttpServletResponse res) 
+		</button>
+	</form>
+	<hr>	
+	<!-- 相對路徑 -->
+	<form action="../servlet/bmi" method="post">		
+		<button>
+			<!-- 相對路徑 -->
+			Press this button and reach to - protected void doPost(HttpServletRequest req, HttpServletResponse res)
+		</button>	
+	</form>
+	<hr>
+	<!-- 絕對路徑 -->
+	<h1>Call by get (form method = "get")</h1>
+	<form action="/JavaWeb-20220418/servlet/bmi" method="get">
+		height: <input type="text" name="h" value="185" /><br>
+		weight: <input type="text" name="w" value="100" /><br>
+		<input type="submit">
+	</form>
+	<!-- 絕對路徑 -->
+	<h1>Call by post (form method = "post")</h1>
+	<form action="/JavaWeb-20220418/servlet/bmi" method="post">
+		height: <input type="text" name="h" value="185" /><br>
+		weight: <input type="text" name="w" value="50" /><br>
+		<input type="submit">
+	</form>
+</body>
+</html>
