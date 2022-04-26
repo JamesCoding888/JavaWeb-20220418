@@ -1,5 +1,5 @@
 package servlet;
-import java.io.IOException;    
+import java.io.IOException;     
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +25,7 @@ public class AreaServlet extends HttpServlet {
 				+ "<meta charset=\"UTF-8\">"
 				+ "<title>計算圓面積與球體積</title>");
 		out.println("</head>");
-		out.println("<body align=\"center\">");
+		out.println("<body align=\"center\" bgcolor='#cccccc'>");
 		out.println("<form class=\"pure-form\" action=\"/JavaWeb-20220418/html/area_form.html\"> "
 				+ "		<fieldset>\r\n"
 				+ "			<legend>圓面積與球體積</legend>\r\n"
