@@ -5,11 +5,9 @@
 - Web Application
 - apache-tomcat-9.0.46
 - OpenJDK 
-- Environmental Set-up:
-  Environment Setting
-  apache-tomcat-9.0.46
-  jre-11.0.8.10-hotspot
-
+- Environmental Set-up
+- apache-tomcat-9.0.46
+- jre-11.0.8.10-hotspot
 - Apache Server Status 
 - Apache Manager App 
 - Apache Host Manager
