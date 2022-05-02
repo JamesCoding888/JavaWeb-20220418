@@ -32,4 +32,14 @@
 
 20220502
 - req.getHeaderNames() 
+- hasMoreElements() 
+- headerNames.nextElement() 
+- req.getHeader 
+- split 應用 
+- req.setAttribute 
+- getRequestDispatcher 
+- rd.forward(req, resp) 
+- Servlet 
+
+
               
