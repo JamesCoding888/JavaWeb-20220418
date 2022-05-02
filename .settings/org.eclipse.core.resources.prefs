@@ -4,6 +4,7 @@ encoding//src/main/java/servlet/AreaServlet.java=UTF-8
 encoding//src/main/java/servlet/BMIHttpServlet.java=UTF-8
 encoding//src/main/java/servlet/EmployeeServlet.java=UTF-8
 encoding//src/main/java/servlet/GhostQRServlet.java=UTF-8
+encoding//src/main/java/servlet/HeaderServlet.java=UTF-8
 encoding//src/main/java/servlet/LuckyNumberServlet.java=UTF-8
 encoding//src/main/java/servlet/TimeStampServlet.java=UTF-8
 encoding//src/main/java/servlet/TodayServlet.java=UTF-8

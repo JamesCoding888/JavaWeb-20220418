@@ -1,5 +1,5 @@
 package servlet;
-import java.io.IOException;
+import java.io.IOException; 
 import java.io.PrintWriter;
 import java.util.Arrays;
 import javax.servlet.ServletException;
@@ -27,8 +27,11 @@ public class EmployeeServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html;charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html;charset=UTF-8");
+		resp.setContentType("text/html;charset=UTF-8");
+		
 		
 		PrintWriter out = resp.getWriter();
 		
@@ -40,21 +43,20 @@ public class EmployeeServlet extends HttpServlet {
 		String empBirth = req.getParameter("empBirth");
 		String[] empLang = req.getParameterValues("empLang");
 		String empMemo = req.getParameter("empMemo");
-		
-		// Verify
-		if(empName == null || empName.length() == 0) {
+
+		// Verify(驗證)
+		if (empName == null || empName.length() == 0) {
 			resp.sendError(500, "員工姓名不可空白"); // Http 狀態碼 -> https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Status
 			return;
 		}
-		
 		// 判斷 empAge 字串是否是數字 ?
-		boolean isNumeric = (empAge == null) ? false : empAge.chars().allMatch(Character::isDigit);
+		boolean isNumeric = (empAge == null || empAge.length() == 0) ? false
+				: empAge.chars().allMatch(Character::isDigit);
+
 		if (!isNumeric) {
 			resp.sendError(500, "員工年齡錯誤");
 			return;
 		}
-				
-
 		
 		out.print("empName = " + empName + "<br />");
 		out.print("empAge = " + empAge + "<br />");
@@ -70,7 +72,7 @@ public class EmployeeServlet extends HttpServlet {
 		req.getParameterMap()
 				.entrySet()
 				.forEach(e -> out.print(e.getKey() + " = " + Arrays.toString(e.getValue()) + "<br />"));
-		//out.print(req.getParameterNames());
+		out.print(req.getParameterNames());
 		
 		// 將 form-data 注入 Employee 物件中
 		Employee employee = new Employee(empName, Integer.parseInt(empAge), empSex, empPos, empBirth, empLang, empMemo);
