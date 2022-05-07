@@ -41,5 +41,22 @@
 - rd.forward(req, resp) 
 - Servlet 
 
+         
+20220506
+- Line Notify 
+- httpURLConnection.setRequestProperty 
+- httpURLConnection.setUseCaches 
+- httpURLConnection.getResponseCode
+- (HttpURLConnectionurl) url.openConnection 
+- HttpURLConnection.HTTP_CREATED 
+- dataOutputStream.write 
+- dataOutputStream.flush 
+- org.apache.commons.io 
+- @MultipartConfig
+- enctype="multipart/form-data"
+- part.getInputStream() 
+- IOUtils.toByteArray() 
+- Base64.getEncoder().encodeToString(bytes) 
+- part.getSubmittedFileName()
 
               
