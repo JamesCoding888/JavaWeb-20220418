@@ -1,5 +1,5 @@
 package servlet;
-import java.io.IOException;
+import java.io.IOException; 
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import org.apache.commons.io.IOUtils;
 @WebServlet("/servlet/upload")
 @MultipartConfig(
 		fileSizeThreshold = 1024 * 1024 * 2, // 2 MB
-		maxFileSize = 1024 * 1024 * 10, // 10 MB
+		maxFileSize = -1L, // 10 MB
 		maxRequestSize = 1024 * 1024 * 30 // 30 MB
 )
 public class UploadServlet extends HttpServlet{	
@@ -29,10 +29,10 @@ public class UploadServlet extends HttpServlet{
 				      .equals("cname"))
 					  .forEach(part -> {
 						  try {
-							  String cname = IOUtils.toString(part.getInputStream(), StandardCharsets.UTF_8.name());
+							  String cname = IOUtils.toString(part.getInputStream(), StandardCharsets.UTF_8.name());							  
 							  out.print(part.getName() + ":" + cname);
 						} catch (Exception e) {
-							// TODO: handle exception
+							e.printStackTrace();
 						}
 					  });
 		// 找到 upload_file 的值
