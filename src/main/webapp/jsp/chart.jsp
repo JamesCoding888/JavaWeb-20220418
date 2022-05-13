@@ -1,7 +1,7 @@
 <%@ page import="java.util.Random"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%
 	Random r = new Random();
 	int work = r.nextInt(10);
@@ -12,6 +12,7 @@
 	int coding = r.nextInt(10);
 	String chatType = "PieChart"; // PieChart, BarChart, LineChart, ColumnChart
 %>
+<!DOCTYPE html>
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
