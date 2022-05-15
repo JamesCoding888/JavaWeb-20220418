@@ -6,15 +6,6 @@
 <meta charset="UTF-8">
 <title>Message Form</title>
 <script>
-	// 預覽貼圖
-	function previewSticker(){
-		var stickerId = document.getElementById('stickerId').value;
-		console.log(stickerId); // 印在瀏覽器的 console 中 -> for debug
-		var imgUrl = "https://stickershop.line-scdn.net/stickershop/v1/sticker/" + stickerId + "/android/sticker.png";
-		document.getElementById('previewStickerArea').innerHTML = "<img valign='middle' width='100' src='" + imgUrl + "'>";
- 
-	}
-
 	// 預覽Web圖 
 	function previewWebImage() {
 		var webImageUrl = document.getElementById('webImageUrl').value;
@@ -33,14 +24,6 @@
 	
 	// 表單傳送前的驗證
 	function beforeSubmit() {
-		// 1.檢查訊息內容是否有資料?
-		var content = document.getElementById('content').value;
-		content = content.trim(); // trim() 表示去除左右空白
-		if(content == '') {
-			alert('請輸入訊息內容 !');
-			document.getElementById('content').focus();
-			return false;
-		}
 		// 2.若 webImageUrl 欄位有資料且前面沒有加上http:// 或 https://, 則統一補上 https://
 		var webImageUrl = document.getElementById('webImageUrl').value;
 		webImageUrl = webImageUrl.trim();
@@ -50,42 +33,22 @@
 				document.getElementById('webImageUrl').value = 'https://' + webImageUrl;
 			}
 		}
-		// 3.檢查token內容是否有資料?
-		var token = document.getElementById('token').value;
-		token = token.trim(); // trim() 表示去除左右空白
-		if(token == '') {
-			alert('請輸入token !');
-			document.getElementById('token').focus();
-			return false;
-		}
-		return true;		
+		return true;
 	}
 	
 </script>
 
 </head>
 <body style="padding: 20px">
-	<form class="pure-form" method="post" onsubmit="return beforeSubmit()" action="/JavaWeb-20220418/servlet/message/linesticker">
+	<form class="pure-form" method="post" onsubmit="return beforeSubmit()" action="">
 		<fieldset>
 			<legend>Message Form</legend>
-			訊息: <textarea type="text" placeholder="請輸入訊息" name="content" id="content"></textarea>
-			<p />
-			貼圖(stickerPackageId + stickerId): <br />
-			<input type="number" name="stickerPackageId" id="stickerPackageId" value="6325" style="width: 100px" />
-			<input type="number" name="stickerId" id="stickerId" value="10979907" onchange="previewSticker()" style="width: 120px" />
-			<button type="button" onclick="previewSticker()" class="pure-button pure-button-primary">
-				預覽
-			</button>
-			<span id="previewStickerArea"></span>
-			<p />
 			網路圖片位址: 
 			<input type="text" name="webImageUrl" id="webImageUrl" value="" />
 			<button type="button" onclick="previewWebImage()" class="pure-button pure-button-primary">
 				預覽
 			</button>
 			<div id="previewWebImageArea"></div>
-			<p />
-			請輸入 Token: <input type="password" name="token" id="token" />
 			<p />
 			<button type="submit" class="pure-button pure-button-primary">
 				傳送

@@ -2,9 +2,8 @@ package service;
 import java.io.DataOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-// Line 的 token: bBI6xHXkzdGvByMcaq3Fk90XFa1YhDhZ943trR3XoXI
 public class MessageService {	
-		private String token = "bBI6xHXkzdGvByMcaq3Fk90XFa1YhDhZ943trR3XoXI";		
+		private String token = "";		
 		public int pushMessage(String content) {
 			// 推播程序 ...
 			// 設定發送位置

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 使用 purecss -->
+	<link rel="stylesheet"
+		href="https://unpkg.com/purecss@2.1.0/build/pure-min.css">
+<meta charset="UTF-8">
+<title>Message Form</title>	
+	<!-- javascript 寫在 head 裡面 -->
+	<script>	
+		// 表單傳送前的驗證功能 -> 當按下傳送按鈕時，若偵測到訊息內容為空白，就跳到必須輸入訊息的地方
+		function beforeSubmit() {
+			// 1.檢查訊息內容是否有資料?
+			var account = document.getElementById('account').value;
+			account = account.trim(); // trim() 表示去除左右空白
+			var password = document.getElementById('password').value;
+			password = password.trim(); // trim() 表示去除左右空白
+			if(account == '') {
+				alert('請輸入帳號 !');
+				document.getElementById('account').focus();
+				return false;
+			}
+			if(password == '') {
+				alert('請輸入密碼 !');
+				document.getElementById('password').focus();
+				return false;
+			}
+			return true;
+		}		
+	</script>
+</head>
+<body style="padding: 20px">
+	<form class="pure-form" method="post" onsubmit="return beforeSubmit()" action="">
+		<fieldset>
+			<legend>Message Form</legend>
+			帳號: <input type="text" placeholder="請輸入帳號" name="account" id="account"></input>			
+			<p />
+			密碼: <input type="password" placeholder="請輸入密碼" name="password" id="password"></input>
+			<p />
+			訊息: <textarea type="text" placeholder="請輸入訊息" name="content" id="content"></textarea>
+			<p />			
+			<button type="submit" class="pure-button pure-button-primary">
+				傳送
+			</button>
+		</fieldset>
+	</form>
+</body>
+</html>

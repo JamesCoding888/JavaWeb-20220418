@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://unpkg.com/purecss@2.1.0/build/pure-min.css">
+<meta charset="UTF-8">
+<title>Message Form</title>
+<script>
+	// 預覽貼圖
+	function previewSticker(){
+		var stickerId = document.getElementById('stickerId').value;
+		console.log(stickerId); // 印在瀏覽器的 console 中 -> for debug
+		// 將 imgUrl 的內容放到 previewStickerArea 的地方; 將圖形至中，大小 100
+		var imgUrl = "https://stickershop.line-scdn.net/stickershop/v1/sticker/" + stickerId + "/android/sticker.png";
+		document.getElementById('previewStickerArea').innerHTML = "<img valign='middle' width='100' src='" + imgUrl + "'>";
+		
+	}
+</script>
+
+</head>
+<body style="padding: 20px">
+	<form class="pure-form" method="post" action="">
+		<fieldset>
+			<legend>Message Form</legend>
+			貼圖(stickerPackageId + stickerId): <br />
+			<input type="number" name="stickerPackageId" id="stickerPackageId" value="6325" style="width: 100px" />
+			<input type="number" name="stickerId" id="stickerId" value="10979907" onchange="previewSticker()" style="width: 120px" />
+			<!-- 當按下預覽按鈕，啟動 javascript 的 onclick 功能，將圖放入到 previewStickerArea 地方 -->
+			<button type="button" onclick="previewSticker()" class="pure-button pure-button-primary">
+				預覽
+			</button>			
+			<div id="previewStickerArea"></div> <!-- 圖片跟後面的傳送按鈕在不同行 -->			
+			<button type="submit" class="pure-button pure-button-primary">
+				傳送
+			</button>						
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,5 +1,5 @@
 package servlet;
-import java.io.IOException;   
+import java.io.IOException;    
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +20,9 @@ public class MessageServletLineSticker extends HttpServlet {
 		String stickerPackageId = req.getParameter("stickerPackageId");
 		String stickerId = req.getParameter("stickerId");
 		String webImageUrl = req.getParameter("webImageUrl");
+		final String token = req.getParameter("token");		
 		// 建立推播服務
-		MessageServiceLineSticker messageServiceLineSticker = new MessageServiceLineSticker();
+		MessageServiceLineSticker messageServiceLineSticker = new MessageServiceLineSticker(token);
 		// 進行訊息推播並回傳 httpCode 狀態值
 		//int httpCode = messageServiceLineSticker.pushMessageAndSticker(content);
 		//int httpCode = messageServiceLineSticker.pushMessageAndSticker(content, stickerPackageId, stickerId);
