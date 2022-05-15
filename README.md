@@ -60,6 +60,10 @@
 - part.getSubmittedFileName()
 
 
+20220509
+- jsp_precomplie = true 
+- 使用 Google Chart 應用
+
          
 20220513
 - JavaScript beforeSubmit / onsubmit  / onClick / onChange 
