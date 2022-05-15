@@ -59,4 +59,15 @@
 - Base64.getEncoder().encodeToString(bytes) 
 - part.getSubmittedFileName()
 
-              
+
+         
+20220513
+- JavaScript beforeSubmit / onsubmit  / onClick / onChange 
+- LINE Notify
+- OAuth2 
+- indexOf 
+- console.log 
+- HttpURLConnection.HTTP_CREATED 
+- conn.setDoOutput(true)
+- conn.setUseCaches(false) 
+         
