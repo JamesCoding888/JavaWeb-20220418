@@ -1,7 +1,5 @@
 package filter;
-
 import java.io.IOException;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
@@ -17,6 +15,5 @@ public class UTF8Filter extends HttpFilter{
 		req.setCharacterEncoding("UTF-8");
 		res.setCharacterEncoding("UTF-8");
 		chain.doFilter(req, res);
-	}
-	
+	}	
 }

@@ -9,11 +9,11 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <session-config>
-  	<session-timeout>1</session-timeout>
-  </session-config>
-  
+  <!-- Session timeout setting to refresh session id within 1 minutes  -->
+	  <session-config>
+	  	<session-timeout>1</session-timeout>
+	  </session-config>
+   
   <!-- 建立 TodayServlet 實體 -->
   <servlet>
   	<servlet-name>TodayServlet</servlet-name>  

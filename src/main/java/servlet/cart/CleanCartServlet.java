@@ -1,7 +1,5 @@
 package servlet.cart;
-
-import java.io.IOException;
-
+import java.io.IOException; 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,11 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 @WebServlet("/servlet/cart/clear")
-public class CleanCartServlet extends HttpServlet {
-	
-	
+public class CleanCartServlet extends HttpServlet  {
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
@@ -21,8 +17,9 @@ public class CleanCartServlet extends HttpServlet {
 			// 強迫 session 失效
 			session.invalidate();
 		}
-		// 重導到: "/jsp/cart/buy.jsp"
+		// 重導到: "/jsp/cart/buy.jsp"		
 		RequestDispatcher rd = req.getRequestDispatcher("/jsp/cart/buy.jsp");
 		rd.forward(req, resp);
 	}
+	
 }

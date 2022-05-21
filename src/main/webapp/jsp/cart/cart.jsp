@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css">
 <head>
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css">
 <meta charset="UTF-8">
 <title>Cart</title>
 </head>
@@ -28,6 +28,5 @@
 		</fieldset>
 	
 	</form>
-	
 </body>
 </html>
