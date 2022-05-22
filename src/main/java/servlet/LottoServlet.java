@@ -1,5 +1,5 @@
 package servlet;
-import java.io.IOException; 
+import java.io.IOException;   
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,7 +25,7 @@ public class LottoServlet extends HttpServlet {
 		int count = Integer.parseInt(req.getParameter("count"));
 		// 產生 lotto 數字
 		List<Integer> lottos = lottoService.getLottos(count);
-		// 透過重導到 html/lotto_result.jsp 頁面並將 lottos 物件傳進
+		// 透過重導到 WEB-INF/jsp/lotto_result.jsp 頁面並將 lottos 物件傳進
 		req.setAttribute("lottos", lottos);
 		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/lotto_result.jsp");
 		rd.forward(req, resp);

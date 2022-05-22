@@ -19,7 +19,7 @@ public class BuyServlet extends HttpServlet {
 		List<String> products = null;
 		//第一種寫法
 		/*************************************************************************************
-		System.out.println(session);		
+		System.out.println(session.getId());		
 		synchronized (session) {
 		// 是否 product 的 session 變數已經存在 ? 
 			System.out.println(session.getAttribute("products"));
@@ -42,6 +42,7 @@ public class BuyServlet extends HttpServlet {
 		// 第二種寫法
 //		/*************************************************************************************
 		// 是否 product 的 session 變數已經存在 ?
+		System.out.println(session.getId());
 		System.out.println(session);
 		System.out.println(session.getAttribute("products"));
 		if (session.getAttribute("products") == null) { // 第一次買東西			

@@ -14,6 +14,9 @@ public class ViewCartServlet extends HttpServlet  {
 	
 	private void doHandle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
+		System.out.println(session.getId());
+		System.out.println(session);
+		System.out.println(session.getAttribute("products"));
 		if(session == null || session.getAttribute("products") == null) {
 			// 重導到 "/jsp/cart/buy.jsp"
 			RequestDispatcher rd = req.getRequestDispatcher("/jsp/cart/buy.jsp");
