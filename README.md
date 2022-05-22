@@ -74,4 +74,15 @@
 - HttpURLConnection.HTTP_CREATED 
 - conn.setDoOutput(true)
 - conn.setUseCaches(false) 
+
+         
+20220520
+- HttpSession session = req.getSession()  
+- session.getAttribute() 
+- session.setAttribute() 
+- CopyOnWriteArrayList 
+- synchronized(session) 
+- <session-timeout> 
+- onclick="location.href=' ';" 
+- RequestDispatcher
          
