@@ -88,7 +88,7 @@
 - session.setAttribute() 
 - CopyOnWriteArrayList 
 - synchronized(session) 
-- <session-timeout> 
+- session-timeout
 - onclick="location.href=' ';" 
 - RequestDispatcher
          
