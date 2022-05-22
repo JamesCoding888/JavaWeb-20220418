@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//@WebFilter("/servlet/*")
+@WebFilter("/servlet/*")
 public class WatermarkFilter  extends HttpFilter{
 
 	@Override
@@ -22,6 +22,7 @@ public class WatermarkFilter  extends HttpFilter{
 		html = html.replaceAll("<body", "<body background='/JavaWeb-20220418/image/watermark.jpg' ");
 		// 將資料重寫回給瀏覽器
 		res.getWriter().print(html);
+
 		
 	}	
 }

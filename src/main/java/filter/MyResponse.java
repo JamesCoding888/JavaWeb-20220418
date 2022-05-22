@@ -10,6 +10,8 @@ public class MyResponse extends HttpServletResponseWrapper {
 	private PrintWriter out;
 	private CharArrayWriter bufferedWriter; // 放置 HTML 的地方
 	
+	/*Implicit super constructor HttpServletResponseWrapper() is undefined 
+	 * for default constructor. Must define an explicit constructor	*/ 
 	public MyResponse(HttpServletResponse response) {
 		super(response);
 		bufferedWriter = new CharArrayWriter();

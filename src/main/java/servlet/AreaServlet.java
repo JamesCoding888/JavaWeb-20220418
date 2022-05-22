@@ -16,7 +16,6 @@ public class AreaServlet extends HttpServlet {
 		double r = Double.parseDouble(radius);
 		double area = Math.pow(r, 2) * Math.PI;
 		double volume = 4/3 * Math.pow(r, 3) * Math.PI;
-		
 		PrintWriter out = resp.getWriter();
 		out.println("<html>");
 		out.println("<head>");
