@@ -75,6 +75,12 @@
 - conn.setDoOutput(true)
 - conn.setUseCaches(false) 
 
+
+20220516
+- Filter
+- HttpFilter 
+- HttpServletRequestWrapper
+
          
 20220520
 - HttpSession session = req.getSession()  
