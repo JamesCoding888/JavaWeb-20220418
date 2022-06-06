@@ -21,6 +21,8 @@
 	        內容: <input type="text" name="content" placeholder="請輸入內容" /><p />	        	        
 	        -->
 	        <!-- 2) 建議這樣做 -->
+	        <input type="hidden" name="id" value="${ guestbook.id }" />
+	        <p />
 	        姓名: <input type="text" name="username" value="${ guestbook.username }" placeholder="請輸入 username" /><p /> 
 			內容: <input type="text" name="content" value="${ guestbook.content }" placeholder="請輸入內容" /><p /> 
 	        <input type="hidden" name="id" value="${ guestbook.id }" />
