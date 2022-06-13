@@ -13,21 +13,30 @@
 			// 獲取 DOM 元件
 			var username = document.getElementById("username");
 			var loginBtn = document.getElementById("loginBtn");
+			var chatRoomForm = document.getElementById("chatRoomForm");
+			var messageInput = document.getElementById("messageInput");
+			
 			// 註冊元件的監聽器
 			loginBtn.addEventListener("click", function() {
 				setWebSocket();
 			});
 			
+			// Form 表單內的  submit button 監聽
+			chatRoomForm.addEventListener("submit", function() {
+				// debug 當使用者按下 submit 會跳出警示語，用來確認 form-table 不因 HTML 管控
+				// alert('按下 submit button');
+				sendMessage();
+			});
 			
 			// 設置 WebSocket
 			function setWebSocket() {
 				var url = 'ws://' + window.location.hostname + ':8080${pageContext.request.contextPath}/websockettest'
 				// 開始 WebSocket 連線
-				webSocket = new WebSocket(url);
+				webSocket = new WebSocket(url);								
 				// 以下就可以開始偵測 WebSocket 的各種事件
 				// 連線成功
-				webSocket.onopen = function(event) {
-					console.log('連線成功');
+				webSocket.onopen = function(event) {									
+					console.log('連線成功');														
 					// 連線成功後，關閉 loginBtn 
 					loginBtn.disabled = true;
 					var message = {
@@ -47,26 +56,45 @@
 					// JSON.parse 將 json 字串變成物件, 以便分析
 					var messageObject = JSON.parse(event.data); 
 					console.log(messageObject); // 訊息資料
-					//messageDisplay.innerHTML += messageObject.username + " 說: " +  messageObject.message + "<br>";
-					var content = messageObject.username + " 說: " +  messageObject.message + "<br>";
-					messageDisplay.insertAdjacentHTML('afterbegin', content);
+					// messageDisplay.innerHTML += messageObject.username + " 說: " +  messageObject.message + "<br>";
+					if(messageObject.username == '_count') {
+						count.innerHTML = messageObject.message;
+					} else {
+						var content = messageObject.username + " 說: " +  messageObject.message + "<br>";
+						messageDisplay.insertAdjacentHTML('afterbegin', content);	
+					}
+					
 				};
 			}
 			
 			// 傳送訊息
 			function sendMessage() {
-				
+				// 檢查 WebSocket 的狀態
+				if(webSocket) {
+					var message = {
+						username : username.value,
+						message : messageInput.value
+					};					
+					webSocket.send(JSON.stringify(message));
+				} else {
+					alert('Socket 尚未登入');
+				}
 			}
 		}
 	</script>
 </head>
 <body style="padding: 10px">
-	<form class="pure-form">
+	<form class="pure-form" id="chatRoomForm" onsubmit="return false;">
 		<fieldset>
-			<legend>WebSocket Client</legend>
+			<legend>WebSocket Client  (人數: <span id="count">0</span>)</legend>
 			<input type="text" id="username" placeholder="請輸入名稱">
 			<button type="button" class="pure-button pure-button-primary" id="loginBtn">
 				Socket 登入
+			</button>
+			<p />
+			<input type="text" id="messageInput" placeholder="請輸入訊息">
+			<button type="submit" class="pure-button pure-button-primary">
+				送出訊息
 			</button>
 		</fieldset>
 	</form>
